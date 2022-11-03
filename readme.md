@@ -7,8 +7,8 @@ Azure blob storage proxy for [Deno](https://deno.land) (Deploy)
 Start a basic, safe proxy:
 
 ```js
-import { createAzureBlobProxy } from "https://deno.land/x/azure_blob_proxy/mod.ts";
-Deno.serve(createAzureBlobProxy());
+import { createProxy } from "https://deno.land/x/azure_blob_proxy@0.1.1";
+Deno.serve(createProxy());
 ```
 
 Above code will require setting env variables `azure_account` and `azure_key`.
@@ -46,7 +46,7 @@ Bring your own authorization handler (that must return `401`/`403` or
 ```js
 import { users, authHandler } from "…";
 
-Deno.serve(createAzureBlobProxy({
+Deno.serve(createProxy({
   auth: async (request) => await authHandler(request, users)
 });
 ```
@@ -69,7 +69,7 @@ handlers.set(
   ({ request, storage, container, path }) =>
     put({ request, storage, container, path: `text/${crypto.randomUUID()}` }),
 ); // Add POST handler
-Deno.serve(createAzureBlobProxy(config({ handlers })));
+Deno.serve(createProxy(config({ handlers })));
 ```
 
 See [text.ts](./text.ts) for a fully working production ready example.
@@ -99,7 +99,7 @@ Available options:
 ```ts
 export type AzureBlobProxyOptions = {
   account: string; // Azure storage account name
-  key?: string; // Azure account key (or SAS)
+  key?: string; // Azure account key
   containers: Set<string>; // Allowed containers
   suffix: string; // Azure URL suffix
   handlers: Map<string, StorageHandler>; // HTTP method handlers

@@ -1,7 +1,7 @@
 import { AzureStorage } from "azure_storage_client/storage.ts";
 export type CreateProxyOptions = {
   account: string; // Azure storage account name
-  key?: string; // Azure account key (or SAS)
+  key?: string; // Azure account key
   containers: Set<string>; // Allowed containers
   suffix: string; // Azure URL suffix
   handlers: Map<string, StorageHandler>; // HTTP method handlers
