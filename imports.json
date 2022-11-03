@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.161.0/",
+    "azure_storage_client/": "https://deno.land/x/azure_storage_client@0.4.0/",
+    "azure_blob_proxy/": "./"
+  }
+}
