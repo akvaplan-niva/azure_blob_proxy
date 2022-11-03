@@ -24,6 +24,7 @@ export const documentation =
   <dt>Containers</dt>
   <dd><dd><ul>${containerList}</ul></dd>
 </dl>
+<footer><a href="https://github.com/akvaplan-niva/azure_blob_proxy">azure_blob_proxy</a> is open source on Akvaplan-niva's GitHub.</footer>
 </body></html>`,
       { headers: { "content-type": "text/html; charset=utf-8" } },
     );
