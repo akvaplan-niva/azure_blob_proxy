@@ -7,7 +7,7 @@ Azure blob storage proxy for [Deno](https://deno.land) (Deploy)
 Start a basic, safe proxy:
 
 ```js
-import { createProxy } from "https://deno.land/x/azure_blob_proxy@0.1.1";
+import { createProxy } from "https://deno.land/x/azure_blob_proxy@0.1.1/mod.ts";
 Deno.serve(createProxy());
 ```
 
