@@ -15,12 +15,11 @@ Above code will require setting env variables `azure_account` and `azure_key`.
 
 ## Dev
 
+Start a dev server
+
 ```sh
 deno task dev
 ```
-
-Open http://localhost:9000/ and you should see: a `azure_blob_proxy` header,
-followed by account name, suffix, methods, and containers configured.
 
 ## DELETE and PUT
 
